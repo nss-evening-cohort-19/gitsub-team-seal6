@@ -104,7 +104,19 @@ const profile = () => {
 //   `;
 //   renderToDom('#footer', domString);
 // };
-
+const formInput = () => {
+  let domString = `<form class="row g-3">
+<div class="col-auto">
+  <label for="fullName" class="visually-hidden">Full Name: </label>
+  <input type="name" class="form-control" id="fullName" placeholder="Full Name">
+</div>
+<div class="col-auto">
+  <button type="submit" class="btn btn-primary mb-3">Sort to House</button>
+</div>
+</form>
+`;
+  renderToDom("#form", domString);
+};
 // Event Listeners
 
 // Call the Functions
