@@ -1,7 +1,16 @@
+// Data 
+
+
+
+// Utility Function 
 const renderToDom = (divId, textToRender) => {
   const selectedElement = document.querySelector(divId);
   selectedElement.innerHTML = textToRender;
 };
+
+
+
+// DOM Cards 
 
 const navbar = () => {
   const domString = `<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -78,6 +87,13 @@ const profile = () => {
 //   renderToDom('#footer', domString);
 // };
 
+// Event Listeners  
+
+
+
+
+
+// Call the Functions 
 const startApp = () => {
   profile();
   navbar();
