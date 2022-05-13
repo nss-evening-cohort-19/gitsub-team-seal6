@@ -28,6 +28,8 @@ const renderToDom = (divId, textToRender) => {
   selectedElement.innerHTML = textToRender;
 };
 
+// DOM Cards
+
 const navbar = () => {
   const domString = `<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
@@ -45,7 +47,7 @@ const navbar = () => {
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../index.html">Overview</a>
+          <a class="nav-link active" aria-current="page" href="../pages/index.html">Overview</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../pages/repositories.html">Repositories</a>
@@ -103,20 +105,9 @@ const profile = () => {
 //   renderToDom('#footer', domString);
 // };
 
-const formInput = () => {
-  let domString = `<form class="row g-3">
-<div class="col-auto">
-  <label for="fullName" class="visually-hidden">Full Name: </label>
-  <input type="name" class="form-control" id="fullName" placeholder="Full Name">
-</div>
-<div class="col-auto">
-  <button type="submit" class="btn btn-primary mb-3">Sort to House</button>
-</div>
-</form>
-`;
-  renderToDom("#form", domString);
-};
+// Event Listeners
 
+// Call the Functions
 const startApp = () => {
   profile();
   navbar();
