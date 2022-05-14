@@ -21,49 +21,6 @@ const projects = [
   },
 ];
 
-const profiles = [
-  {
-    imgURL:"../assets/profile-index.jpg",
-    name: "Jacob Martin",
-    username: "Massacre_Saint",
-    bio: "Barista by day, programmer by night",
-    location: "Nashville, TN",
-    email: "jbm6b@mtmail.mtsu.edu",
-    netlify:"https://app.netlify.com/teams/massacre-saint/overview?_ga=2.253120458.296479475.1652535796-1481864206.1650580315",
-    social:""
-  },
-  {
-    imgURL:"../assets/profile-repo.png",
-    name: "Emily Stroud",
-    username: "emilyjstroud",
-    bio: "Barista by day, programmer by night",
-    location: "Nashville, TN",
-    email: "jbm6b@mtmail.mtsu.edu",
-    netlify:"https://app.netlify.com/teams/massacre-saint/overview?_ga=2.253120458.296479475.1652535796-1481864206.1650580315",
-    social:""
-  },
-  {
-    imgURL:"../assets/profile-projects.jpg",
-    name: "Jeremiah King",
-    username: "gitNitroTitan",
-    bio: "Barista by day, programmer by night",
-    location: "Nashville, TN",
-    email: "jbm6b@mtmail.mtsu.edu",
-    netlify:"https://app.netlify.com/teams/massacre-saint/overview?_ga=2.253120458.296479475.1652535796-1481864206.1650580315",
-    social:""
-  },
-  {
-    imgURL:"../assets/profile-pack.jpeg",
-    name: "Jessica Morrison",
-    username: "Jess-Morrison",
-    bio: "Barista by day, programmer by night",
-    location: "Nashville, TN",
-    email: "jbm6b@mtmail.mtsu.edu",
-    netlify:"https://app.netlify.com/teams/massacre-saint/overview?_ga=2.253120458.296479475.1652535796-1481864206.1650580315",
-    social:""
-  }
-
-]
 // Packages Data
 const packages = [
   {
