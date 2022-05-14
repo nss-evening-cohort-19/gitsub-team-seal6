@@ -6,3 +6,21 @@ body{
   display: flex;
   justify-content: center, flex-end, space-evenly;
 } */
+
+/* Packages container CSS */
+/* #profile{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-content: center;
+}
+
+
+#packages-container{
+  display:flex;
+  flex-wrap: wrap;
+  align-content: right;
+  justify-content:right;
+  align-content: center;
+  
+} */
