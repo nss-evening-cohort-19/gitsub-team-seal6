@@ -149,7 +149,7 @@ const packagesCard = (packages)=> {
   for (let package of packages){
   domString += `<div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">${package.appName}</h5>
+    <h5 class="card-title"><i class="bi bi-box-seam"></i> ${package.appName}</h5>
     <p class="card-text">${package.description}.</p>
     <a href="#" class="btn btn-primary">Learn More</a>
   </div>
