@@ -21,6 +21,22 @@ const projects = [
   },
 ];
 
+const profiles = [
+  {
+    imgURL:"../assets/profile-index.jpg",
+    name: "Jacob Martin",
+    username: "Massacre_Saint",
+    bio: "Barista by day, programmer by night",
+    imgURL:"../assets/profile-index.jpg",
+    name: "Jacob Martin",
+    username: "Massacre_Saint",
+    bio: "Barista by day, programmer by night",
+    location: "Nashville, TN",
+    email: "jbm6b@mtmail.mtsu.edu",
+    netlify:"https://app.netlify.com/teams/massacre-saint/overview?_ga=2.253120458.296479475.1652535796-1481864206.1650580315",
+    social:""
+  }
+]
 let newProjectName = [];
 
 const renderToDom = (divId, textToRender) => {
@@ -77,20 +93,62 @@ const navbar = () => {
 const profile = () => {
   const domString = `
   <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <img src="../assets/profile-index.jpg" alt="...">
+    <div>
+      <h5>Jacob Martin</h5>
+      <p>Massacre-Saint</p>
+      <p>Barista by day,programmer by night.</p>
+      <button type="button" class="btn btn-secondary btn-sm">Follow</button>
+      <button type="button" class="btn btn-secondary btn-sm">Sponsor</button>
+      <button type="button" class="btn btn-secondary btn-sm">...</button>
+      <div>
+        <div>
+          <a>
+            <i class="fa-solid fa-user-group"></i>
+            <span>1 follower</span> 
+          </a>
+           . 
+          <a>
+            <span>0 following</span>
+          </a>
+        </div>
+      </div>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
+      <li>
+      <i class="fa-solid fa-location-dot"></i>
+        <a>Nashville, TN</a>
+      </li>
+      <li>
+        <i class="fa-regular fa-envelope"></i>
+        <a>jbm6b@mtmail.mtsu.edu</a>
+      </li>
+      <li>
+        <i class="fa-solid fa-link"></i>
+        <a>Webiste netlify</a>
+      </li>
+      <li>
+        <i class="fa-brands fa-twitter"></i>
+        <a>Twitter handle</a>
+      </li>
     </ul>
-    <div class="card-body">
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
+    <ul class="list-group list-group-flush">
+      <li>
+        <span>Highlights</span>
+      </li>
+      <li>
+        <i class="fa-solid fa-award"></i>
+        <span>An item</span>
+      </li>
+      <li>
+        <i class="fa-solid fa-6"></i>
+        <span>A part of Team Seal 6</span>
+      </li>
+      <li>
+        <i class="fa-brands fa-hotjar"></i>
+        <span>Dr.T's sexy cohort!</span>
+      </li>
+    </ul>
   </div>
   `;
   renderToDom("#profile", domString);
