@@ -27,8 +27,34 @@ const profiles = [
     name: "Jacob Martin",
     username: "Massacre_Saint",
     bio: "Barista by day, programmer by night",
-    imgURL:"../assets/profile-index.jpg",
-    name: "Jacob Martin",
+    location: "Nashville, TN",
+    email: "jbm6b@mtmail.mtsu.edu",
+    netlify:"https://app.netlify.com/teams/massacre-saint/overview?_ga=2.253120458.296479475.1652535796-1481864206.1650580315",
+    social:""
+  },
+  {
+    imgURL:"../assets/profile-repo.png",
+    name: "Emily Stroud",
+    username: "Massacre",
+    bio: "Barista by day, programmer by night",
+    location: "Nashville, TN",
+    email: "jbm6b@mtmail.mtsu.edu",
+    netlify:"https://app.netlify.com/teams/massacre-saint/overview?_ga=2.253120458.296479475.1652535796-1481864206.1650580315",
+    social:""
+  },
+  {
+    imgURL:"../assets/profile-projects.jpg",
+    name: "Jeremiah King",
+    username: "Massacre_Saint",
+    bio: "Barista by day, programmer by night",
+    location: "Nashville, TN",
+    email: "jbm6b@mtmail.mtsu.edu",
+    netlify:"https://app.netlify.com/teams/massacre-saint/overview?_ga=2.253120458.296479475.1652535796-1481864206.1650580315",
+    social:""
+  },
+  {
+    imgURL:"../assets/profile-pack.jpeg",
+    name: "Jessica Morrison",
     username: "Massacre_Saint",
     bio: "Barista by day, programmer by night",
     location: "Nashville, TN",
@@ -36,6 +62,7 @@ const profiles = [
     netlify:"https://app.netlify.com/teams/massacre-saint/overview?_ga=2.253120458.296479475.1652535796-1481864206.1650580315",
     social:""
   }
+
 ]
 // Packages Data
 const packages = [
@@ -114,14 +141,16 @@ const navbar = () => {
   renderToDom("#navbar", domString);
 };
 
-const profile = () => {
-  const domString = `
+const profile = (profiles) => {
+  let domString = ""
+  for (let profile of profiles) {
+    domString += `
   <div class="card" style="width: 18rem;">
-    <img src="../assets/profile-index.jpg" alt="...">
+    <img src="${profile.imgURL}" alt="...">
     <div>
-      <h5>Jacob Martin</h5>
-      <p>Massacre-Saint</p>
-      <p>Barista by day,programmer by night.</p>
+      <h5>${profile.name}</h5>
+      <p>${profile.username}</p>
+      <p>${[profile.bio]}</p>
       <button type="button" class="btn btn-secondary btn-sm">Follow</button>
       <button type="button" class="btn btn-secondary btn-sm">Sponsor</button>
       <button type="button" class="btn btn-secondary btn-sm">...</button>
@@ -141,19 +170,19 @@ const profile = () => {
     <ul class="list-group list-group-flush">
       <li>
       <i class="fa-solid fa-location-dot"></i>
-        <a>Nashville, TN</a>
+        <a>${profile.location}</a>
       </li>
       <li>
         <i class="fa-regular fa-envelope"></i>
-        <a>jbm6b@mtmail.mtsu.edu</a>
+        <a>${profile.email}</a>
       </li>
       <li>
         <i class="fa-solid fa-link"></i>
-        <a>Webiste netlify</a>
+        <a href= "${profile.netlify}">Netlify Projects</a>
       </li>
       <li>
         <i class="fa-brands fa-twitter"></i>
-        <a>Twitter handle</a>
+        <a>${profile.social}</a>
       </li>
     </ul>
     <ul class="list-group list-group-flush">
@@ -175,8 +204,21 @@ const profile = () => {
     </ul>
   </div>
   `;
-  renderToDom("#profile", domString);
-};
+  }
+  const profileOver = profiles[0];
+  const profileRepo = profiles[1];
+  const profileProjects = profiles[2];
+  const profilePackages = profiles[3];
+  if (profileOver) {
+    renderToDom("#profile", domString);
+  } else if (profileRepo) {
+    renderToDom("#profile-repo", domString);
+  } else if (profileProjects == document.getElementById('profile-projects')) {
+    renderToDom("#profile-projects", domString);
+  } else if (profilePackages == document.getElementById('profile-packages')) {
+    renderToDom("#profile-packages", domString);
+  }
+}
 
 // const footer = () => {
 //   const domString = `
@@ -222,11 +264,12 @@ renderToDom("#packages-container",domString)
 
 
 
+
 // Event Listeners
 
 // Call the Functions
 const startApp = () => {
-  profile();
+  profile(profiles);
   navbar();
   packagesCard(packages);
   formInput();
