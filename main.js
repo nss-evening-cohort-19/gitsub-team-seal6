@@ -35,7 +35,7 @@ const profiles = [
   {
     imgURL:"../assets/profile-repo.png",
     name: "Emily Stroud",
-    username: "Massacre",
+    username: "emilyjstroud",
     bio: "Barista by day, programmer by night",
     location: "Nashville, TN",
     email: "jbm6b@mtmail.mtsu.edu",
@@ -45,7 +45,7 @@ const profiles = [
   {
     imgURL:"../assets/profile-projects.jpg",
     name: "Jeremiah King",
-    username: "Massacre_Saint",
+    username: "gitNitroTitan",
     bio: "Barista by day, programmer by night",
     location: "Nashville, TN",
     email: "jbm6b@mtmail.mtsu.edu",
@@ -55,7 +55,7 @@ const profiles = [
   {
     imgURL:"../assets/profile-pack.jpeg",
     name: "Jessica Morrison",
-    username: "Massacre_Saint",
+    username: "Jess-Morrison",
     bio: "Barista by day, programmer by night",
     location: "Nashville, TN",
     email: "jbm6b@mtmail.mtsu.edu",
@@ -205,17 +205,13 @@ const profile = (profiles) => {
   </div>
   `;
   }
-  const profileOver = profiles[0];
-  const profileRepo = profiles[1];
-  const profileProjects = profiles[2];
-  const profilePackages = profiles[3];
-  if (profileOver) {
+  if (profiles.username === "Massacre_Saint") {
     renderToDom("#profile", domString);
-  } else if (profileRepo) {
+  } if (profiles.username === "emilyjstroud") {
     renderToDom("#profile-repo", domString);
-  } else if (profileProjects == document.getElementById('profile-projects')) {
+  } if (profiles.username === "gitNitroTitan") {
     renderToDom("#profile-projects", domString);
-  } else if (profilePackages == document.getElementById('profile-packages')) {
+  } if (profiles.username === "Jess-Morrison") {
     renderToDom("#profile-packages", domString);
   }
 }
