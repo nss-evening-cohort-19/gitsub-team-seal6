@@ -26,49 +26,7 @@ const renderToDom = (divId, textToRender) => {
   selectedElement.innerHTML = textToRender;
 };
 
-const navbar = () => {
-  const domString = `<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../pages/index.html">Overview</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../pages/repositories.html">Repositories</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../pages/projects.html">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../pages/packages.html">Packages</a>
-        </li>
-      <form class="d-flex">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-  `;
-  renderToDom("#navbar", domString);
-};
+import navbar from "./navbar.js";
 
 const profile = () => {
   const domString = `
@@ -94,11 +52,11 @@ const profile = () => {
 
 const packagesCard = (packages) => {
   let domString = " ";
-  for (let package of packages) {
+  for (let pkg of packages) {
     domString += `<div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title"><i class="bi bi-box-seam"></i> ${package.appName}</h5>
-    <p class="card-text">${package.description}.</p>
+    <h5 class="card-title"><i class="bi bi-box-seam"></i> ${pkg.appName}</h5>
+    <p class="card-text">${pkg.description}.</p>
     <a href="#" class="btn btn-primary">Learn More</a>
   </div>
 </div>`;
