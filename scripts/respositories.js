@@ -1,37 +1,40 @@
-const projects = [
+const repoData = [
   {
-    id: 1,
-    projectName: "project-example",
-    description: "Sorting Hat",
+    repoId: 1,
+    title: "horror-ipsum-generator",
+    description:
+      "A horror themed lorum ipsum genrator with spooky inspired words and phrases.",
+    favorite: false,
+    lastUpdated: "2 days ago",
   },
   {
-    id: 2,
-    projectName: "Example1",
-    description: "Word Sort",
+    repoId: 2,
+    title: "how-many-days-til",
+    description:
+      "A React countdown app of days between today and E-19 Graduation. Woo-hoo!",
+    favorite: false,
+    lastUpdated: "7 days ago",
   },
   {
-    id: 3,
-    projectName: "my-goals",
-    description: "My Resume",
+    repoId: 3,
+    title: "ht-dr-t",
+    description: "HTTP status codes as portrayed by Dr. T GIFs 💃🏾",
+    favorite: true,
+    lastUpdated: "16 days ago",
   },
   {
-    id: 4,
-    projectName: "Sample My Goals",
-    description: "No description",
+    repoId: 4,
+    title: "people-loving-nashville",
+    description:
+      "Website for peoplelovingnashville.com, a non-profit founded to help those in need in the Nashville community.",
+    favorite: true,
+    lastUpdated: "2 months ago",
   },
 ];
-
-let newProjectName = [];
 
 const renderToDom = (divId, textToRender) => {
   const selectedElement = document.querySelector(divId);
   selectedElement.innerHTML = textToRender;
-};
-
-const projectsId = () => {
-  projects.forEach((indProj, index) => {
-    return (indProj.id = index + 1);
-  });
 };
 
 const navbar = () => {
@@ -100,56 +103,28 @@ const profile = () => {
   renderToDom("#profile", domString);
 };
 
-const projectsCard = (projects) => {
-  let domString = "";
-  for (const indProj of projects) {
+const repoCards = (array) => {
+  let domString = " ";
+  for (const item of array) {
     domString += `
-  <div class="domCard1" text-center">
-  <div class="card-body">
-  <p class="projectName">${indProj.projectName} </p>
-  <p class="projDescription">${indProj.projDescription}</p>
-  <hr>
-  </div>
-  </div>`;
-  }
-  renderToDom("#projects-container", domString);
-};
-
-const formInput = () => {
-  let domString = `<form class="mb-3">
-  <label for="projectName" class="form-label">Project board name</label>
-  <input type="text" class="form-control" id="projectName" placeholder="Project name">
-  </div>
-  <div class="mb-3">
-  <label for="projectDescription" class="form-label">Description (optional)</label>
-  <textarea class="form-control" id="projectDescription" rows="3"></textarea>
-  <button type="submit" class="btn btn-primary mb-3">Create project</button>
-  </div>
-  </form>
+    <div class="card" style="width: 46rem;">
+      <div class="card-body">
+        <a href="${item.repoId}" h5 class="card-title">${item.title}</a>
+        <p class="card-text">${item.description}</p>
+        <a href="#" class="btn btn-outline-info btn-sm">${
+          item.favorite ? "" : ""
+        }${item.title}</a>
+        <p class="card-text">${item.lastUpdated}</p>
+      </div>
+    </div>
   `;
-  renderToDom("#form-container", domString);
-};
-
-const newProject = () => {
-  document.querySelector("form").addEventListener("submit", (e) => {
-    e.preventDefault();
-    const newProjectObj = {
-      id: projects.length + 1,
-      name: document.querySelector("#formProjectName").value,
-      description: document.querySelector("#projectDescription").value,
-    };
-    projects.push(newProjectObj);
-    projOnDom(projects);
-    formInput.reset();
-  });
+  }
+  renderToDom("#repo-container", domString);
 };
 
 const startApp = () => {
   profile();
   navbar();
-  projectsCard(projects);
-  projectsId(projects);
-  newProject();
-  formInput();
+  repoCards(repoData);
 };
 startApp();
