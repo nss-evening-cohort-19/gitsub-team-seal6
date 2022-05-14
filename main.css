@@ -15,10 +15,10 @@ body{
   border-radius:0;
   color:#c9d1d9 ;
   padding-left: .5rem;
-
 }
 .card > img {
   border-radius: 50%;
+  
 }
 
 .btn {
