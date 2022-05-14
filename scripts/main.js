@@ -1,27 +1,3 @@
-// Packages Data
-const packages = [
-  {
-    appName: "Docker",
-    description: "lorem ipsum",
-  },
-  {
-    appName: "Ruby",
-    description: "lorem ipsum",
-  },
-  {
-    appName: "Apache",
-    description: "lorem ipsum",
-  },
-  {
-    appName: "npm",
-    description: "lorem ipsum",
-  },
-  {
-    appName: "NuGet",
-    description: "lorem ipsum",
-  },
-];
-
 const renderToDom = (divId, textToRender) => {
   const selectedElement = document.querySelector(divId);
   selectedElement.innerHTML = textToRender;
@@ -106,71 +82,11 @@ const profile = () => {
 
 //Packages Card
 
-const packagesCard = (packages) => {
-  let domString = " ";
-  for (let package of packages) {
-    domString += `<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"><i class="bi bi-box-seam"></i> ${package.appName}</h5>
-    <p class="card-text">${package.description}.</p>
-    <a href="#" class="btn btn-primary">Learn More</a>
-  </div>
-</div>`;
-  }
-  renderToDom("#packages-container", domString);
-};
-
-// const projectsCard = (projects) => {
-//   let domString = "";
-//   for (const indProj of projects) {
-//     domString += `
-//   <div class="domCard1" text-center">
-//   <div class="card-body">
-//   <p class="projectName">${indProj.projectName} </p>
-//   <p class="projDescription">${indProj.projDescription}</p>
-//   <hr>
-//   </div>
-//   </div>`;
-//   }
-//   renderToDom("#projects-container", domString);
-// };
-
-// const formInput = () => {
-//   let domString = `<form class="mb-3">
-//   <label for="projectName" class="form-label">Project board name</label>
-//   <input type="text" class="form-control" id="projectName" placeholder="Project name">
-//   </div>
-//   <div class="mb-3">
-//   <label for="projectDescription" class="form-label">Description (optional)</label>
-//   <textarea class="form-control" id="projectDescription" rows="3"></textarea>
-//   <button type="submit" class="btn btn-primary mb-3">Create project</button>
-//   </div>
-//   </form>
-//   `;
-//   renderToDom("#form-container", domString);
-// };
-
 // Event Listeners
-
-//projects loop and cards loop
-// const newProject = () => {
-//   document.querySelector("form").addEventListener("submit", (e) => {
-//     e.preventDefault();
-//     const newProjectObj = {
-//       id: projects.length + 1,
-//       name: document.querySelector("#formProjectName").value,
-//       description: document.querySelector("#projectDescription").value,
-//     };
-//     projects.push(newProjectObj);
-//     projOnDom(projects);
-//     formInput.reset();
-//   });
-// };
 
 // Call the Functions
 const startApp = () => {
   profile();
   navbar();
-  packagesCard(packages);
 };
 startApp();
