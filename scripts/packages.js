@@ -68,16 +68,19 @@ const packagesCard = (packages) => {
 
 // Form Card 
 const formInput = () => {
-  let domString = `<form class="mb-3">
+  let domString = `
+  
+  <form>
   <label for="projectName" class="form-label">Packages name</label>
-  <input type="text" class="form-control" id="projectName" placeholder="Package name">
+  <input type="text" class="form-control" id="packageName" placeholder="Package name">
   </div>
   <div class="mb-3">
-  <label for="projectDescription" class="form-label">Description (optional)</label>
+  <label for="projectDescription" id="description" class="form-label">Description (optional)</label>
   <textarea class="form-control" id="projectDescription" rows="3"></textarea>
   <button type="submit" class="btn btn-primary mb-3">Create package</button>
   </div>
   </form>
+  
   `;
   renderToDom("#form-container", domString);
 };
@@ -85,13 +88,25 @@ const formInput = () => {
 // Event Listener 
 
 const eventListener = () => {
-
- document.querySelector("#form-container").addEventListener("click",(e)=>{
-  if (e.target.id.includes('submit')) {
-    formInfo.push(...packages.splice(index,1))
-    packagesCard(pkg)
-  }
- })
+  const formAdd = document.getElementById("form-container")
+  formAdd.addEventListener("submit",(e)=>{
+  e.preventDefault();
+const addForm={
+  appName: document.querySelector("#packageName").value,
+  description: document.querySelector("#description").value
+}
+packages.push(addForm);
+packagesCard(packages);
+formInput.reset();
+// const formAdd = document.querySelector("form")
+// formAdd.addEventListener("submit",(e)=>{
+//   if (e.target.id.includes('submit')) {
+//     formInfo.push(...packages.splice(1))
+    
+//   }
+//   packagesCard(packages)
+//   formAdd.reset();
+})
 }
 
 const startApp = () => {
@@ -99,6 +114,6 @@ const startApp = () => {
   navbar();
   packagesCard(packages);
   formInput();
-  eventListener()
+  eventListener();
 };
 startApp();
