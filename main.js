@@ -141,16 +141,14 @@ const navbar = () => {
   renderToDom("#navbar", domString);
 };
 
-const profile = (profiles) => {
-  let domString = ""
-  for (let profile of profiles) {
-    domString += `
+const profile = () => {
+  const domString = `
   <div class="card" style="width: 18rem;">
-    <img src="${profile.imgURL}" alt="...">
+    <img src="../assets/profile-index.jpg" alt="...">
     <div>
-      <h5>${profile.name}</h5>
-      <p>${profile.username}</p>
-      <p>${[profile.bio]}</p>
+      <h5>Jacob Martin</h5>
+      <p>Massacre_Saint</p>
+      <p>Barista by day, programmer by night</p>
       <button type="button" class="btn btn-secondary btn-sm">Follow</button>
       <button type="button" class="btn btn-secondary btn-sm">Sponsor</button>
       <button type="button" class="btn btn-secondary btn-sm">...</button>
@@ -170,19 +168,19 @@ const profile = (profiles) => {
     <ul class="list-group list-group-flush">
       <li>
       <i class="fa-solid fa-location-dot"></i>
-        <a>${profile.location}</a>
+        <a>Nashville, TN</a>
       </li>
       <li>
         <i class="fa-regular fa-envelope"></i>
-        <a>${profile.email}</a>
+        <a>jbm6b@mtmail.mtsu.edu</a>
       </li>
       <li>
         <i class="fa-solid fa-link"></i>
-        <a href= "${profile.netlify}">Netlify Projects</a>
+        <a href= "https://app.netlify.com/teams/massacre-saint/overview?_ga=2.253120458.296479475.1652535796-1481864206.1650580315">Netlify Projects</a>
       </li>
       <li>
         <i class="fa-brands fa-twitter"></i>
-        <a>${profile.social}</a>
+        <a></a>
       </li>
     </ul>
     <ul class="list-group list-group-flush">
@@ -204,17 +202,8 @@ const profile = (profiles) => {
     </ul>
   </div>
   `;
+    renderToDom('#profile', domString);
   }
-  if (profiles.username === "Massacre_Saint") {
-    renderToDom("#profile", domString);
-  } if (profiles.username === "emilyjstroud") {
-    renderToDom("#profile-repo", domString);
-  } if (profiles.username === "gitNitroTitan") {
-    renderToDom("#profile-projects", domString);
-  } if (profiles.username === "Jess-Morrison") {
-    renderToDom("#profile-packages", domString);
-  }
-}
 
 // const footer = () => {
 //   const domString = `
@@ -265,7 +254,7 @@ renderToDom("#packages-container",domString)
 
 // Call the Functions
 const startApp = () => {
-  profile(profiles);
+  profile();
   navbar();
   packagesCard(packages);
   formInput();
