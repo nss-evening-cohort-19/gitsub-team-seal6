@@ -78,6 +78,8 @@ const navbar = () => {
   renderToDom("#navbar", domString);
 };
 
+
+
 const profile = () => {
   const domString = `
   <div class="card" style="width: 18rem;">
@@ -100,10 +102,29 @@ const profile = () => {
   renderToDom("#profile", domString);
 };
 
+// *** Repo Cards *** //
+
+const repoCards = (array) => {
+  let domString = " ";
+  for (const item of array) {
+    domString += `
+    <div class="card" style="width: 46rem;">
+      <div class="card-body">
+        <a href="${item.repoId}" h5 class="card-title">${item.title}</a>
+        <p class="card-text">${item.description}</p>
+        <a href="#" class="btn btn-outline-info btn-sm">${item.favorite ? "" : ""}${item.title}</a>
+        <p class="card-text">${item.lastUpdated}</p>
+      </div>
+    </div>
+  `;
+  }
+  renderToDom("#repo-container", domString);
+};
+
 
 const startApp = () => {
   profile();
   navbar();
-  repoData();
+  repoCards(repoData);
 };
 startApp();
