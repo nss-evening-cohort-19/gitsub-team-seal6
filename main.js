@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const repoData = [
   {
     repoId: 1,
@@ -30,7 +29,6 @@ const repoData = [
   },
 ];
 
-=======
 const projects = [
   {
     id: 1,
@@ -80,7 +78,6 @@ const packages = [
 
 let newProjectName = [];
 
->>>>>>> 023875352e170ffb49ff825ead45b04ce7ae191b
 const renderToDom = (divId, textToRender) => {
   const selectedElement = document.querySelector(divId);
   selectedElement.innerHTML = textToRender;
@@ -156,7 +153,6 @@ const profile = () => {
   renderToDom("#profile", domString);
 };
 
-<<<<<<< HEAD
 // *** Repo Cards *** //
 
 const repoCards = (array) => {
@@ -176,15 +172,7 @@ const repoCards = (array) => {
   renderToDom("#repo-container", domString);
 };
 
-=======
-// const footer = () => {
-//   const domString = `
-//   <div class="footer">
-//     <a href="#" class="link">A Link</a>
-//   </div>
-//   `;
-//   renderToDom('#footer', domString);
-// };
+
 const formInput = () => {
   let domString = `<form class="row g-3">
 <div class="col-auto">
@@ -198,7 +186,6 @@ const formInput = () => {
 `;
   renderToDom("#form", domString);
 };
->>>>>>> 023875352e170ffb49ff825ead45b04ce7ae191b
 
 // Packages Card 
 
@@ -228,11 +215,8 @@ renderToDom("#packages-container",domString)
 const startApp = () => {
   profile();
   navbar();
-<<<<<<< HEAD
   repoCards(repoData);
-=======
   packagesCard(packages);
   formInput();
->>>>>>> 023875352e170ffb49ff825ead45b04ce7ae191b
 };
 startApp();
