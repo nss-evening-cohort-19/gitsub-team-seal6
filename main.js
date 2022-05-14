@@ -1,3 +1,34 @@
+const repoData = [
+  {
+    repoId: 1,
+    title: "horror-ipsum-generator",
+    description: "A horror themed lorum ipsum genrator with spooky inspired words and phrases.",
+    favorite: false,
+    lastUpdated: "2 days ago",
+  },
+  {
+    repoId: 2,
+    title: "how-many-days-til",
+    description: "A React countdown app of days between today and E-19 Graduation. Woo-hoo!",
+    favorite: false,
+    lastUpdated: "7 days ago"
+  },
+  {
+    repoId: 3,
+    title: "ht-dr-t",
+    description: "HTTP status codes as portrayed by Dr. T GIFs 💃🏾",
+    favorite: true,
+    lastUpdated: "16 days ago"
+  },
+  {
+    repoId: 4,
+    title: "people-loving-nashville",
+    description: "Website for peoplelovingnashville.com, a non-profit founded to help those in need in the Nashville community.",
+    favorite: true,
+    lastUpdated: "2 months ago"
+  },
+];
+
 const projects = [
   {
     id: 1,
@@ -98,6 +129,8 @@ const navbar = () => {
   renderToDom("#navbar", domString);
 };
 
+
+
 const profile = () => {
   const domString = `
   <div class="card" style="width: 18rem;">
@@ -120,14 +153,26 @@ const profile = () => {
   renderToDom("#profile", domString);
 };
 
-// const footer = () => {
-//   const domString = `
-//   <div class="footer">
-//     <a href="#" class="link">A Link</a>
-//   </div>
-//   `;
-//   renderToDom('#footer', domString);
-// };
+// *** Repo Cards *** //
+
+const repoCards = (array) => {
+  let domString = " ";
+  for (const item of array) {
+    domString += `
+    <div class="card" style="width: 46rem;">
+      <div class="card-body">
+        <a href="${item.repoId}" h5 class="card-title">${item.title}</a>
+        <p class="card-text">${item.description}</p>
+        <a href="#" class="btn btn-outline-info btn-sm">${item.favorite ? "" : ""}${item.title}</a>
+        <p class="card-text">${item.lastUpdated}</p>
+      </div>
+    </div>
+  `;
+  }
+  renderToDom("#repo-container", domString);
+};
+
+
 const formInput = () => {
   let domString = `<form class="row g-3">
 <div class="col-auto">
@@ -170,6 +215,7 @@ renderToDom("#packages-container",domString)
 const startApp = () => {
   profile();
   navbar();
+  repoCards(repoData);
   packagesCard(packages);
   formInput();
 };
