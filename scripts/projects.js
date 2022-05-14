@@ -1,34 +1,3 @@
-const repoData = [
-  {
-    repoId: 1,
-    title: "horror-ipsum-generator",
-    description: "A horror themed lorum ipsum genrator with spooky inspired words and phrases.",
-    favorite: false,
-    lastUpdated: "2 days ago",
-  },
-  {
-    repoId: 2,
-    title: "how-many-days-til",
-    description: "A React countdown app of days between today and E-19 Graduation. Woo-hoo!",
-    favorite: false,
-    lastUpdated: "7 days ago"
-  },
-  {
-    repoId: 3,
-    title: "ht-dr-t",
-    description: "HTTP status codes as portrayed by Dr. T GIFs 💃🏾",
-    favorite: true,
-    lastUpdated: "16 days ago"
-  },
-  {
-    repoId: 4,
-    title: "people-loving-nashville",
-    description: "Website for peoplelovingnashville.com, a non-profit founded to help those in need in the Nashville community.",
-    favorite: true,
-    lastUpdated: "2 months ago"
-  },
-];
-
 const projects = [
   {
     id: 1,
@@ -52,30 +21,6 @@ const projects = [
   },
 ];
 
-// Packages Data
-const packages = [
-  {
-    appName: "Docker",
-    description:"lorem ipsum",
-  },
-  {
-    appName: "Ruby",
-    description: "lorem ipsum",
-  },
-  {
-    appName: "Apache",
-    description: "lorem ipsum",
-  },
-  {
-    appName: "npm",
-    description: "lorem ipsum",
-  },
-  {
-    appName: "NuGet",
-    description: "lorem ipsum",
-  },
-];
-
 let newProjectName = [];
 
 const renderToDom = (divId, textToRender) => {
@@ -83,7 +28,11 @@ const renderToDom = (divId, textToRender) => {
   selectedElement.innerHTML = textToRender;
 };
 
-// DOM Cards
+const projectsId = () => {
+  projects.forEach((indProj, index) => {
+    return (indProj.id = index + 1);
+  });
+};
 
 const navbar = () => {
   const domString = `<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -129,8 +78,6 @@ const navbar = () => {
   renderToDom("#navbar", domString);
 };
 
-
-
 const profile = () => {
   const domString = `
   <div class="card" style="width: 18rem;">
@@ -153,70 +100,56 @@ const profile = () => {
   renderToDom("#profile", domString);
 };
 
-// *** Repo Cards *** //
-
-const repoCards = (array) => {
-  let domString = " ";
-  for (const item of array) {
+const projectsCard = (projects) => {
+  let domString = "";
+  for (const indProj of projects) {
     domString += `
-    <div class="card" style="width: 46rem;">
-      <div class="card-body">
-        <a href="${item.repoId}" h5 class="card-title">${item.title}</a>
-        <p class="card-text">${item.description}</p>
-        <a href="#" class="btn btn-outline-info btn-sm">${item.favorite ? "" : ""}${item.title}</a>
-        <p class="card-text">${item.lastUpdated}</p>
-      </div>
-    </div>
-  `;
+  <div class="domCard1" text-center">
+  <div class="card-body">
+  <p class="projectName">${indProj.projectName} </p>
+  <p class="projDescription">${indProj.projDescription}</p>
+  <hr>
+  </div>
+  </div>`;
   }
-  renderToDom("#repo-container", domString);
+  renderToDom("#projects-container", domString);
 };
-
 
 const formInput = () => {
-  let domString = `<form class="row g-3">
-<div class="col-auto">
-  <label for="fullName" class="visually-hidden">Full Name: </label>
-  <input type="name" class="form-control" id="fullName" placeholder="Full Name">
-</div>
-<div class="col-auto">
-  <button type="submit" class="btn btn-primary mb-3">Sort to House</button>
-</div>
-</form>
-`;
-  renderToDom("#form", domString);
+  let domString = `<form class="mb-3">
+  <label for="projectName" class="form-label">Project board name</label>
+  <input type="text" class="form-control" id="projectName" placeholder="Project name">
+  </div>
+  <div class="mb-3">
+  <label for="projectDescription" class="form-label">Description (optional)</label>
+  <textarea class="form-control" id="projectDescription" rows="3"></textarea>
+  <button type="submit" class="btn btn-primary mb-3">Create project</button>
+  </div>
+  </form>
+  `;
+  renderToDom("#form-container", domString);
 };
 
-// Packages Card 
+const newProject = () => {
+  document.querySelector("form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const newProjectObj = {
+      id: projects.length + 1,
+      name: document.querySelector("#formProjectName").value,
+      description: document.querySelector("#projectDescription").value,
+    };
+    projects.push(newProjectObj);
+    projOnDom(projects);
+    formInput.reset();
+  });
+};
 
-const packagesCard = (packages)=> {
-  let domString =" "
-  for (let package of packages){
-  domString += `<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"><i class="bi bi-box-seam"></i> ${package.appName}</h5>
-    <p class="card-text">${package.description}.</p>
-    <a href="#" class="btn btn-primary">Learn More</a>
-  </div>
-</div>`
-  };
-renderToDom("#packages-container",domString)
-}
-
-
-
-
-
-
-
-// Event Listeners
-
-// Call the Functions
 const startApp = () => {
   profile();
   navbar();
-  repoCards(repoData);
-  packagesCard(packages);
+  projectsCard(projects);
+  projectsId(projects);
+  newProject();
   formInput();
 };
 startApp();
