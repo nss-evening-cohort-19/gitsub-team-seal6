@@ -1,3 +1,5 @@
+import navbar from "./navbar.js";
+
 const packages = [
   {
     appName: "Docker",
@@ -26,7 +28,7 @@ const renderToDom = (divId, textToRender) => {
   selectedElement.innerHTML = textToRender;
 };
 
-import navbar from "./navbar.js";
+const formInfo=[]
 
 const profile = () => {
   const domString = `
@@ -64,9 +66,39 @@ const packagesCard = (packages) => {
   renderToDom("#packages-container", domString);
 };
 
+// Form Card 
+const formInput = () => {
+  let domString = `<form class="mb-3">
+  <label for="projectName" class="form-label">Packages name</label>
+  <input type="text" class="form-control" id="projectName" placeholder="Package name">
+  </div>
+  <div class="mb-3">
+  <label for="projectDescription" class="form-label">Description (optional)</label>
+  <textarea class="form-control" id="projectDescription" rows="3"></textarea>
+  <button type="submit" class="btn btn-primary mb-3">Create package</button>
+  </div>
+  </form>
+  `;
+  renderToDom("#form-container", domString);
+};
+
+// Event Listener 
+
+const eventListener = () => {
+
+ document.querySelector("#form-container").addEventListener("click",(e)=>{
+  if (e.target.id.includes('submit')) {
+    formInfo.push(...packages.splice(index,1))
+    packagesCard(pkg)
+  }
+ })
+}
+
 const startApp = () => {
   profile();
   navbar();
   packagesCard(packages);
+  formInput();
+  eventListener()
 };
 startApp();
