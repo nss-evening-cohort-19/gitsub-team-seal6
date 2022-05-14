@@ -139,7 +139,7 @@ const formInput = () => {
 </div>
 </form>
 `;
-  renderToDom("#form", domString);
+  renderToDom("#form-container", domString);
 };
 
 // Packages Card 
