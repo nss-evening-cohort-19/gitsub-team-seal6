@@ -37,6 +37,30 @@ const profiles = [
     social:""
   }
 ]
+// Packages Data
+const packages = [
+  {
+    appName: "Docker",
+    description:"lorem ipsum",
+  },
+  {
+    appName: "Ruby",
+    description: "lorem ipsum",
+  },
+  {
+    appName: "Apache",
+    description: "lorem ipsum",
+  },
+  {
+    appName: "npm",
+    description: "lorem ipsum",
+  },
+  {
+    appName: "NuGet",
+    description: "lorem ipsum",
+  },
+];
+
 let newProjectName = [];
 
 const renderToDom = (divId, textToRender) => {
@@ -175,12 +199,36 @@ const formInput = () => {
 `;
   renderToDom("#form", domString);
 };
+
+// Packages Card 
+
+const packagesCard = (packages)=> {
+  let domString =" "
+  for (let package of packages){
+  domString += `<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><i class="bi bi-box-seam"></i> ${package.appName}</h5>
+    <p class="card-text">${package.description}.</p>
+    <a href="#" class="btn btn-primary">Learn More</a>
+  </div>
+</div>`
+  };
+renderToDom("#packages-container",domString)
+}
+
+
+
+
+
+
+
 // Event Listeners
 
 // Call the Functions
 const startApp = () => {
   profile();
   navbar();
+  packagesCard(packages);
   formInput();
 };
 startApp();
