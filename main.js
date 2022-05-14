@@ -1,3 +1,34 @@
+const repoData = [
+  {
+    repoId: 1,
+    title: "horror-ipsum-generator",
+    description: "A horror themed lorum ipsum genrator with spooky inspired words and phrases.",
+    favorite: false,
+    lastUpdated: "2 days ago",
+  },
+  {
+    repoId: 2,
+    title: "how-many-days-til",
+    description: "A React countdown app of days between today and E-19 Graduation. Woo-hoo!",
+    favorite: false,
+    lastUpdated: "7 days ago"
+  },
+  {
+    repoId: 3,
+    title: "ht-dr-t",
+    description: "HTTP status codes as portrayed by Dr. T GIFs 💃🏾",
+    favorite: true,
+    lastUpdated: "16 days ago"
+  },
+  {
+    repoId: 4,
+    title: "people-loving-nashville",
+    description: "Website for peoplelovingnashville.com, a non-profit founded to help those in need in the Nashville community.",
+    favorite: true,
+    lastUpdated: "2 months ago"
+  },
+];
+
 const renderToDom = (divId, textToRender) => {
   const selectedElement = document.querySelector(divId);
   selectedElement.innerHTML = textToRender;
@@ -69,17 +100,10 @@ const profile = () => {
   renderToDom("#profile", domString);
 };
 
-// const footer = () => {
-//   const domString = `
-//   <div class="footer">
-//     <a href="#" class="link">A Link</a>
-//   </div>
-//   `;
-//   renderToDom('#footer', domString);
-// };
 
 const startApp = () => {
   profile();
   navbar();
+  repoData();
 };
 startApp();
