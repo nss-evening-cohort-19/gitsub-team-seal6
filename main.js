@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const repoData = [
   {
     repoId: 1,
@@ -29,10 +30,63 @@ const repoData = [
   },
 ];
 
+=======
+const projects = [
+  {
+    id: 1,
+    projectName: "project-example",
+    description: "Sorting Hat",
+  },
+  {
+    id: 2,
+    projectName: "Example1",
+    description: "Word Sort",
+  },
+  {
+    id: 3,
+    projectName: "my-goals",
+    description: "My Resume",
+  },
+  {
+    id: 4,
+    projectName: "Sample My Goals",
+    description: "No description",
+  },
+];
+
+// Packages Data
+const packages = [
+  {
+    appName: "Docker",
+    description:"lorem ipsum",
+  },
+  {
+    appName: "Ruby",
+    description: "lorem ipsum",
+  },
+  {
+    appName: "Apache",
+    description: "lorem ipsum",
+  },
+  {
+    appName: "npm",
+    description: "lorem ipsum",
+  },
+  {
+    appName: "NuGet",
+    description: "lorem ipsum",
+  },
+];
+
+let newProjectName = [];
+
+>>>>>>> 023875352e170ffb49ff825ead45b04ce7ae191b
 const renderToDom = (divId, textToRender) => {
   const selectedElement = document.querySelector(divId);
   selectedElement.innerHTML = textToRender;
 };
+
+// DOM Cards
 
 const navbar = () => {
   const domString = `<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -51,7 +105,7 @@ const navbar = () => {
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../index.html">Overview</a>
+          <a class="nav-link active" aria-current="page" href="../pages/index.html">Overview</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../pages/repositories.html">Repositories</a>
@@ -83,7 +137,7 @@ const navbar = () => {
 const profile = () => {
   const domString = `
   <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
+    <img src="/pages/user.png" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Card title</h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -102,6 +156,7 @@ const profile = () => {
   renderToDom("#profile", domString);
 };
 
+<<<<<<< HEAD
 // *** Repo Cards *** //
 
 const repoCards = (array) => {
@@ -121,10 +176,63 @@ const repoCards = (array) => {
   renderToDom("#repo-container", domString);
 };
 
+=======
+// const footer = () => {
+//   const domString = `
+//   <div class="footer">
+//     <a href="#" class="link">A Link</a>
+//   </div>
+//   `;
+//   renderToDom('#footer', domString);
+// };
+const formInput = () => {
+  let domString = `<form class="row g-3">
+<div class="col-auto">
+  <label for="fullName" class="visually-hidden">Full Name: </label>
+  <input type="name" class="form-control" id="fullName" placeholder="Full Name">
+</div>
+<div class="col-auto">
+  <button type="submit" class="btn btn-primary mb-3">Sort to House</button>
+</div>
+</form>
+`;
+  renderToDom("#form", domString);
+};
+>>>>>>> 023875352e170ffb49ff825ead45b04ce7ae191b
 
+// Packages Card 
+
+const packagesCard = (packages)=> {
+  let domString =" "
+  for (let package of packages){
+  domString += `<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><i class="bi bi-box-seam"></i> ${package.appName}</h5>
+    <p class="card-text">${package.description}.</p>
+    <a href="#" class="btn btn-primary">Learn More</a>
+  </div>
+</div>`
+  };
+renderToDom("#packages-container",domString)
+}
+
+
+
+
+
+
+
+// Event Listeners
+
+// Call the Functions
 const startApp = () => {
   profile();
   navbar();
+<<<<<<< HEAD
   repoCards(repoData);
+=======
+  packagesCard(packages);
+  formInput();
+>>>>>>> 023875352e170ffb49ff825ead45b04ce7ae191b
 };
 startApp();

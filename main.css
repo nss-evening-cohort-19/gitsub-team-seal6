@@ -1,3 +1,29 @@
 body{
   background-color: aqua;
 }
+<<<<<<< HEAD
+=======
+
+/* .footer{
+  display: flex;
+  justify-content: center, flex-end, space-evenly;
+} */
+
+/* Packages container CSS */
+/* #profile{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-content: center;
+}
+
+
+#packages-container{
+  display:flex;
+  flex-wrap: wrap;
+  align-content: right;
+  justify-content:right;
+  align-content: center;
+  
+} */
+>>>>>>> 023875352e170ffb49ff825ead45b04ce7ae191b
