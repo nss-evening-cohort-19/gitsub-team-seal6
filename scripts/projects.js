@@ -106,6 +106,7 @@ const newProject = () => {
 const startApp = () => {
   profile();
   navbar();
+  footer();
   projectsCard(projects);
   projectsId(projects);
   newProject();

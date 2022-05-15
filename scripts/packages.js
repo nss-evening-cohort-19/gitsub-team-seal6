@@ -68,6 +68,7 @@ const packagesCard = (packages) => {
 const startApp = () => {
   profile();
   navbar();
+  footer();
   packagesCard(packages);
 };
 startApp();

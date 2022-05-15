@@ -32,15 +32,6 @@ const profile = () => {
   renderToDom("#profile", domString);
 };
 
-// const footer = () => {
-//   const domString = `
-//   <div class="footer">
-//     <a href="#" class="link">A Link</a>
-//   </div>
-//   `;
-//   renderToDom('#footer', domString);
-// };
-
 //Packages Card
 
 // Event Listeners
@@ -49,5 +40,6 @@ const profile = () => {
 const startApp = () => {
   profile();
   navbar();
+  footer();
 };
 startApp();

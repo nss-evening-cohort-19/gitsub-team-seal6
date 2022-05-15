@@ -85,6 +85,7 @@ const repoCards = (array) => {
 const startApp = () => {
   profile();
   navbar();
+  footer();
   repoCards(repoData);
 };
 startApp();
