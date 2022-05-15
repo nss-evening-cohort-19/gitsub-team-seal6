@@ -1,10 +1,6 @@
 body{
   background-color: aqua;
-}
-.main-container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  box-sizing: border-box;
 }
 /* .footer{
   display: flex;
@@ -12,8 +8,6 @@ body{
 } */
 /************Profile Card******************/
 .card {
-  display: flex;
-  flex-direction: column;
   background-color:#0d1117;
   border-color:#30363d;
   border-radius:0;
@@ -24,16 +18,16 @@ body{
   border-radius: 50%;
   
 }
-
 .btn {
   background-color: #21262d;
   border-color: rgb(240, 246, 252, 0.1);
   padding: 5px 16px;
 }
-#container {
-  display: flex;
-
+#navbar {
+height:auto;
+width: fit-content;
 }
+
 .repo-card {
   display: flex;
   flex-direction: column;
@@ -43,8 +37,8 @@ body{
   color: #c9d1d9;
   padding: 16px;
   width: 400px;
-}
-.repo-details {
+} 
+ .repo-details {
   display: inline-flex;
   justify-content: space-between;
 }

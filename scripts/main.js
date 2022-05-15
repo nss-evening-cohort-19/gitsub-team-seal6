@@ -183,11 +183,37 @@ const repoCard = () => {
     </div>
   `;
   }
-  langColor(pinRepos);
   renderToDom("#container", domString);
 };
 
-//Packages Card
+const formInput = () => {
+  let domString = `<form class="mb-3">
+  <label for="repoName" class="form-label">Project board name</label>
+  <input type="text" class="form-control" id="repoName" placeholder="Repo name">
+  </div>
+  <div class="mb-3">
+  <label for="repoDescription" class="form-label">Description (optional)</label>
+  <textarea class="form-control" id="repoDescription" rows="3"></textarea>
+  <button type="submit" class="btn btn-primary mb-3">Create repo</button>
+  </div>
+  </form>
+  `;
+  renderToDom("#form", domString);
+};
+
+const newRepo = () => {
+  document.querySelector("form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const newRepoObj = {
+      id: pinRepos.length + 1,
+      name: document.querySelector("#repoName").value,
+      description: document.querySelector("#repoDescription").value,
+    };
+    pinRepos.push(newRepo);
+    repoCard(pinRepos);
+    newRepo.reset();
+  });
+};
 
 // Event Listeners
 
@@ -196,5 +222,6 @@ const startApp = () => {
   profile();
   navbar();
   repoCard(pinRepos);
+  formInput();
 };
 startApp();
