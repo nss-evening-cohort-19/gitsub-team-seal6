@@ -7,6 +7,9 @@ const renderToDom = (divId, textToRender) => {
 
 import navbar from "./navbar.js";
 
+
+import footer from "./footer.js";
+
 const profile = () => {
   const domString = `
   <div class="card" style="width: 18rem;">

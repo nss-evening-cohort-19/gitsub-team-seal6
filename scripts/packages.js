@@ -26,6 +26,7 @@ const renderToDom = (divId, textToRender) => {
   selectedElement.innerHTML = textToRender;
 };
 
+import footer from "./footer.js";
 import navbar from "./navbar.js";
 
 const profile = () => {
