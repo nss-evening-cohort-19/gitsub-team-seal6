@@ -1,7 +1,11 @@
 body{
   background-color: aqua;
 }
-
+.main-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
 /* .footer{
   display: flex;
   justify-content: center, flex-end, space-evenly;
@@ -26,7 +30,34 @@ body{
   border-color: rgb(240, 246, 252, 0.1);
   padding: 5px 16px;
 }
+#container {
+  display: flex;
 
+}
+.repo-card {
+  display: flex;
+  flex-direction: column;
+  background-color:#0d1117;
+  border-color:#30363d;
+  border-radius: 6px;
+  color: #c9d1d9;
+  padding: 16px;
+  width: 400px;
+}
+.repo-details {
+  display: inline-flex;
+  justify-content: space-between;
+}
+.lang-dot {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid;
+    border-radius: 50%;
+    background-color: orange;
+} 
 /* Packages container CSS */
 /* #profile{
   display: flex;

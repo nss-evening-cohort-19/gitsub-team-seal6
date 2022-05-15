@@ -1,3 +1,79 @@
+const pinRepos = [
+  {
+    id: 1,
+    name: "Sorting-hat",
+    desciption: "Created an app based on the Harry Potter sorting hat.",
+    type: "Javascript",
+    star: 1,
+    branches: 8,
+  },
+
+  {
+    id: 2,
+    name: "Word-counter",
+    desciption:
+      "Created an app that counted the number of an input field and displayed onto the DOM.",
+    type: "Javascript",
+    star: 2,
+    branches: 4,
+  },
+
+  {
+    id: 3,
+    name: "Link-bio",
+    desciption:
+      "Created a page that can be used as a modul for displaying contact and social info.",
+    type: "Javascript",
+    star: 6,
+    branches: 2,
+  },
+
+  {
+    id: 4,
+    name: "HTML-resume",
+    desciption:
+      "Created an splash page that showed my current resume on the DOM.",
+    type: "Javascript",
+    star: 3,
+    branches: 1,
+  },
+
+  {
+    id: 5,
+    name: "Test30",
+    desciption: "Final test on the create 30 repos assigment.MILESTONE.",
+    type: "Javascript",
+    star: 1,
+    branches: 2,
+  },
+
+  {
+    id: 6,
+    name: "Product-cards",
+    desciption:
+      "Created a DOM page that could be used for retail purposes when displaying multiple products.",
+    type: "Javascript",
+    star: 10,
+    branches: 3,
+  },
+];
+const langColor = () => {
+  const dot = document.querySelector(".color-change");
+  if (pinRepos.type === "Javascript")
+    return (dot.style.backgroundColor = "#0d1117");
+};
+//   const color = pinRepos.find(getLanguage);
+//   const dot = document.querySelector(".lang-dot");
+//   function getLanguage(value, index, array) {
+//     if (value === "Javascript") {
+//       return (yellow = dot.body.style.backgroundColor = "yellow");
+//     } else if (value === "HTML") {
+//       return (orange = dot.body.style.backgroundColor = "orange");
+//     } else if (value === "CSS") {
+//       return (blue = dot.body.style.backgroundColor = "blue");
+//     }
+//   }
+// };
 const renderToDom = (divId, textToRender) => {
   const selectedElement = document.querySelector(divId);
   selectedElement.innerHTML = textToRender;
@@ -68,17 +144,48 @@ const profile = () => {
     </ul>
   </div>
   `;
-    renderToDom('#profile', domString);
-  }
+  renderToDom("#profile", domString);
+};
 
-// const footer = () => {
-//   const domString = `
-//   <div class="footer">
-//     <a href="#" class="link">A Link</a>
-//   </div>
-//   `;
-//   renderToDom('#footer', domString);
-// };
+const repoCard = () => {
+  let domString = " ";
+  for (let repo of pinRepos) {
+    domString += `
+    <div class="repo-card">
+      <div>
+        <a>
+          <span>
+            <i class="fa-solid fa-inbox"></i>
+            ${repo.name}
+          </span>
+        </a>
+      </div>
+      <div>
+          <p class="color-change">${repo.desciption}</p>
+      </div>
+      <div class="repo-details">
+        <div>
+          <span class= "lang-dot">${repo.type}</span>
+        </div>
+        <div>
+          <span>
+          <i class="fa-regular fa-star"></i>
+          ${repo.star}
+          </span>
+        </div>
+        <div>
+          <span>
+            <i class="fa-solid fa-code-branch"></i>
+            ${repo.branches}
+          </span>
+        </div>
+      </div>
+    </div>
+  `;
+  }
+  langColor(pinRepos);
+  renderToDom("#container", domString);
+};
 
 //Packages Card
 
@@ -88,5 +195,6 @@ const profile = () => {
 const startApp = () => {
   profile();
   navbar();
+  repoCard(pinRepos);
 };
 startApp();
