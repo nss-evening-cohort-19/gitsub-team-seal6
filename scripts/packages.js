@@ -26,6 +26,7 @@ const renderToDom = (divId, textToRender) => {
   selectedElement.innerHTML = textToRender;
 };
 
+import footer from "./footer.js";
 import navbar from "./navbar.js";
 
 const profile = () => {
@@ -109,6 +110,7 @@ const packagesCard = (packages) => {
 const startApp = () => {
   profile();
   navbar();
+  footer();
   packagesCard(packages);
 };
 startApp();

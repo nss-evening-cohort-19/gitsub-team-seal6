@@ -7,6 +7,9 @@ const renderToDom = (divId, textToRender) => {
 
 import navbar from "./navbar.js";
 
+
+import footer from "./footer.js";
+
 const profile = () => {
   const domString = `
   <div class="card" style="width: 18rem;">
@@ -71,15 +74,6 @@ const profile = () => {
     renderToDom('#profile', domString);
   }
 
-// const footer = () => {
-//   const domString = `
-//   <div class="footer">
-//     <a href="#" class="link">A Link</a>
-//   </div>
-//   `;
-//   renderToDom('#footer', domString);
-// };
-
 //Packages Card
 
 // Event Listeners
@@ -88,5 +82,6 @@ const profile = () => {
 const startApp = () => {
   profile();
   navbar();
+  footer();
 };
 startApp();
