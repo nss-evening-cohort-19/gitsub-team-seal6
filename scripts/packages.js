@@ -33,11 +33,11 @@ const formInfo = [];
 const profile = () => {
   const domString = `
   <div class="card" style="width: 18rem;">
-    <img src="../assets/profile-index.jpg" alt="...">
+    <img src="../assets/profile-pack.jpeg" alt="photo of jess ">
     <div>
-      <h5>Jacob Martin</h5>
-      <p>Massacre_Saint</p>
-      <p>Barista by day, programmer by night</p>
+      <h5>Jessica Morrison</h5>
+      <p>Jess_Morrison</p>
+      <p>Hello! My name is Jess and I'm an IT Enthusiast! </p>
       <button type="button" class="btn btn-secondary btn-sm">Follow</button>
       <button type="button" class="btn btn-secondary btn-sm">Sponsor</button>
       <button type="button" class="btn btn-secondary btn-sm">...</button>
@@ -61,7 +61,7 @@ const profile = () => {
       </li>
       <li>
         <i class="fa-regular fa-envelope"></i>
-        <a>jbm6b@mtmail.mtsu.edu</a>
+        <a>jnicomorr@gmail.com</a>
       </li>
       <li>
         <i class="fa-solid fa-link"></i>
