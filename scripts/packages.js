@@ -1,6 +1,5 @@
 import footer from "./footer.js";
 import navbar from "./navbar.js";
-
 const packages = [
   {
     appName: "Docker",
