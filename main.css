@@ -49,7 +49,6 @@ width: fit-content;
 
 .repo-card {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   background-color:#0d1117;
   border-color:#30363d;
@@ -63,7 +62,6 @@ width: fit-content;
   justify-content: space-between;
 }
 .lang-dot {
-    position: relative;
     top: 1px;
     display: inline-block;
     width: 12px;
