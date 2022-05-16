@@ -126,7 +126,7 @@ const repoCards = (array) => {
 
 const repoFormInput = () => {
   let domString = `<form class="mb-3">
-  <label for="repotName" class="form-label">Repository board name</label>
+  <label for="repoName" class="form-label">Repository name</label>
   <input type="text" class="form-control" id="repoName" placeholder="Repo name">
   </div>
   <div class="mb-3">
@@ -150,7 +150,7 @@ const eventListener = () => {
       description: document.querySelector("#repoDescription").value,
     };
     repoData.push(addForm);
-    repoCards(array);
+    repoCards(repoData);
     formInput.reset();
   });
 };
