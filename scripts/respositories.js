@@ -33,6 +33,7 @@ const repoData = [
 ];
 
 const formInfo = [];
+const updates = ["2 days ago", "7 days ago", "16 days ago", "2 months ago", ""];
 
 const renderToDom = (divId, textToRender) => {
   const selectedElement = document.querySelector(divId);
@@ -46,11 +47,11 @@ import footer from "./footer.js";
 const profile = () => {
   const domString = `
   <div class="card" style="width: 18rem;">
-    <img src="../assets/profile-index.jpg" alt="...">
+    <img src="../assets/ejs.jpg" alt="...">
     <div>
-      <h5>Jacob Martin</h5>
-      <p>Massacre_Saint</p>
-      <p>Barista by day, programmer by night</p>
+      <h5>Emily Stroud</h5>
+      <p>emilyjstroud</p>
+      <p>Hair Slinger by day, Dev Ops by night 🌚</p>
       <button type="button" class="btn btn-secondary btn-sm">Follow</button>
       <button type="button" class="btn btn-secondary btn-sm">Sponsor</button>
       <button type="button" class="btn btn-secondary btn-sm">...</button>
@@ -74,11 +75,11 @@ const profile = () => {
       </li>
       <li>
         <i class="fa-regular fa-envelope"></i>
-        <a>jbm6b@mtmail.mtsu.edu</a>
+        <a>emilystroud93@gmail.com</a>
       </li>
       <li>
         <i class="fa-solid fa-link"></i>
-        <a href= "https://app.netlify.com/teams/massacre-saint/overview?_ga=2.253120458.296479475.1652535796-1481864206.1650580315">Netlify Projects</a>
+        <a href= "https://app.netlify.com/teams/emilyjstroud/sites">Netlify Projects</a>
       </li>
       <li>
         <i class="fa-brands fa-twitter"></i>
@@ -149,6 +150,7 @@ const eventListener = () => {
     const addForm = {
       title: document.querySelector("#repoName").value,
       description: document.querySelector("#repoDescription").value,
+      lastUpdated: updates[Math.floor(Math.random() * 10)],
     };
     repoData.push(addForm);
     repoCards(repoData);
