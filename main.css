@@ -1,22 +1,41 @@
-body{
-  background-color: aqua;
+* {
   box-sizing: border-box;
+}
+body {
+  background-color: #0d1117;
+}
+.navbar {
+  background-color: #0d1117;
+  border-color: #30363d;
+  border-radius: 0;
+  color: #c9d1d9;
+}
+.navbar-brand > img {
+  border-radius: 50%;
 }
 /* .footer{
   display: flex;
   justify-content: center, flex-end, space-evenly;
 } */
 /************Profile Card******************/
-.card {
+.profile-card {
   background-color:#0d1117;
   border-color:#30363d;
   border-radius:0;
   color:#c9d1d9 ;
   padding-left: .5rem;
+  display: flex;
+  flex-direction: column;
+}
+  .card {
+  background-color: #0d1117;
+  border-color: #30363d;
+  border-radius: 0;
+  color: #c9d1d9;
+  padding-left: 0.5rem;
 }
 .card > img {
   border-radius: 50%;
-  
 }
 .btn {
   background-color: #21262d;
@@ -52,20 +71,72 @@ width: fit-content;
     border-radius: 50%;
     background-color: orange;
 } 
+
+#flex-container {
+  display: flex;
+}
+#profile {
+  display: flex;
+  flex: 1;
+  width: 20%;
+  float: left;
+}
 /* Packages container CSS */
-/* #profile{
+/* #profile {
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
   align-content: center;
-}
+} */
 
-
-#packages-container{
-  display:flex;
+/* #packages-container {
+  display: flex;
   flex-wrap: wrap;
   align-content: right;
-  justify-content:right;
+  justify-content: right;
   align-content: center;
-  
 } */
+
+#projects-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #30363d;
+  width: 80%;
+  float: left;
+  color: #c9d1d9;
+  background-color: #0d1117;
+  border-color: #30363d;
+  padding-bottom: 16px;
+}
+#forms-container {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+}
+.col {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #0d1117;
+  border: transparent;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-top: 16px;
+  padding-right: 40px;
+}
+.row {
+  border: 1px #30363d solid;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  background-color: #0d1117;
+  border-color: #30363d;
+  color: #c9d1d9;
+  padding-left: 0.5rem;
+}
+.form-control {
+  background-color: transparent;
+  border: 1px solid #30363d;
+}
