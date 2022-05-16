@@ -38,6 +38,8 @@ const renderToDom = (divId, textToRender) => {
 };
 
 import navbar from "./navbar.js";
+import footer from "./footer.js";
+
 
 const profile = () => {
   const domString = `
@@ -125,6 +127,7 @@ const repoCards = (array) => {
 const startApp = () => {
   profile();
   navbar();
+  footer();
   repoCards(repoData);
 };
 startApp();

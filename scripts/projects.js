@@ -34,6 +34,7 @@ const projectsId = () => {
   });
 };
 
+import footer from "./footer.js";
 import navbar from "./navbar.js";
 
 const profile = () => {
@@ -147,6 +148,7 @@ const newProject = () => {
 const startApp = () => {
   profile();
   navbar();
+  footer();
   projectsCard(projects);
   projectsId(projects);
   newProject();
