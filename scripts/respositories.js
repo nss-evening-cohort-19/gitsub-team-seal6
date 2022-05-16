@@ -32,6 +32,8 @@ const repoData = [
   },
 ];
 
+const formInfo = [];
+
 const renderToDom = (divId, textToRender) => {
   const selectedElement = document.querySelector(divId);
   selectedElement.innerHTML = textToRender;
@@ -124,10 +126,42 @@ const repoCards = (array) => {
   renderToDom("#repo-container", domString);
 };
 
+const repoFormInput = () => {
+  let domString = `<form class="mb-3" id="form-input">
+  <label for="repoName" class="form-label">Repository name</label>
+  <input type="text" class="form-control" id="repoName" placeholder="Repo name">
+  </div>  <div class="mb-3">
+  <label for="repoDescription" class="form-label">Description (optional)</label>
+  <textarea class="form-control" id="repoDescription" rows="3"></textarea>
+  <button type="submit" class="btn btn-primary mb-3">Create repository</button>
+  </div>
+  </form>
+  `;
+  renderToDom("#form-container", domString);
+};
+
+// *** EVENT LISTENERS *** //
+
+const eventListener = () => {
+  const formAdd = document.getElementById("form-input");
+  formAdd.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const addForm = {
+      title: document.querySelector("#repoName").value,
+      description: document.querySelector("#repoDescription").value,
+    };
+    repoData.push(addForm);
+    repoCards(repoData);
+    formAdd.reset();
+  });
+};
+
 const startApp = () => {
   profile();
   navbar();
   footer();
+  repoFormInput();
   repoCards(repoData);
+  eventListener();
 };
 startApp();
