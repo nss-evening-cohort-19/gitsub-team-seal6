@@ -1,6 +1,13 @@
 const navbar = () => {
-  const domString = `<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  const domString = `<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
+  <nav class="navbar">
+  <div class="container">
+    <a class="navbar-brand" href="https://github.com/">
+      <img src="../assets/icons8-github.gif" alt="github icon" width="46" height="40">
+    </a>
+  </div>
+</nav>
     <button
       class="navbar-toggler"
       type="button"
@@ -26,15 +33,6 @@ const navbar = () => {
         <li class="nav-item">
           <a class="nav-link" href="../pages/packages.html">Packages</a>
         </li>
-      <form class="d-flex">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
     </div>
   </div>
 </nav>

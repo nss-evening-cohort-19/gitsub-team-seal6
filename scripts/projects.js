@@ -104,12 +104,22 @@ const projectsCard = (projects) => {
   let domString = "";
   for (const indProj of projects) {
     domString += `
-  <div class="domCard1" text-center">
-  <div class="card-body">
-  <p class="projectName">${indProj.projectName} </p>
-  <p class="projDescription">${indProj.projDescription}</p>
-  <hr>
-  </div>
+    <div id = "projectbox" class= "mt-3"> 
+    <div class="Box-row clearfix position-relative pr-6"> 
+    <div class="container px-4">   
+    <div class="row gx-5">
+      <div class="col">
+       <div class="p-3 bg-transparent">${indProj.projectName}</div>
+      </div>
+      <div class="col">
+        <div class="p-3 bg-transparent">${indProj.projDescription}</div>
+      </div>
+      <div class="col">
+        <div class="p-3 bg-transparent">...</div>
+      </div>
+      </div>
+    </div>
+    </div>
   </div>`;
   }
   renderToDom("#projects-container", domString);
@@ -145,9 +155,9 @@ const eventListeners = () => {
   });
 };
 
-function resetForm() {
+const resetForm = () => {
   console.log("Reset form");
-}
+};
 
 const startApp = () => {
   profile();
