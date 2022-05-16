@@ -2,31 +2,31 @@ const projects = [
   {
     id: 1,
     projectName: "project-example",
-    description: "Sorting Hat",
+    projDescription: "Sorting Hat",
   },
   {
     id: 2,
     projectName: "Example1",
-    description: "Word Sort",
+    projDescription: "Word Sort",
   },
   {
     id: 3,
     projectName: "my-goals",
-    description: "My Resume",
+    projDescription: "My Resume",
   },
   {
     id: 4,
     projectName: "Sample My Goals",
-    description: "No description",
+    projDescription: "No description",
   },
 ];
-
-let newProjectName = [];
 
 const renderToDom = (divId, textToRender) => {
   const selectedElement = document.querySelector(divId);
   selectedElement.innerHTML = textToRender;
 };
+
+const formInfo = [];
 
 const projectsId = () => {
   projects.forEach((indProj, index) => {
@@ -98,51 +98,66 @@ const profile = () => {
     </ul>
   </div>
   `;
-    renderToDom('#profile', domString);
-  }
+  renderToDom("#profile", domString);
+};
 
 const projectsCard = (projects) => {
   let domString = "";
   for (const indProj of projects) {
     domString += `
-  <div class="domCard1" text-center">
-  <div class="card-body">
-  <p class="projectName">${indProj.projectName} </p>
-  <p class="projDescription">${indProj.projDescription}</p>
-  <hr>
-  </div>
+    <div id = "projectbox" class= "mt-3"> 
+    <div class="Box-row clearfix position-relative pr-6"> 
+    <div class="container px-4">   
+    <div class="row gx-5">
+      <div class="col">
+       <div class="p-3 bg-transparent">${indProj.projectName}</div>
+      </div>
+      <div class="col">
+        <div class="p-3 bg-transparent">${indProj.projDescription}</div>
+      </div>
+      <div class="col">
+        <div class="p-3 bg-transparent">...</div>
+      </div>
+      </div>
+    </div>
+    </div>
   </div>`;
   }
   renderToDom("#projects-container", domString);
 };
 
-const formInput = () => {
-  let domString = `<form class="mb-3">
+const formInputs = () => {
+  let domString = `<form class="mb-3" id="form-inputs">
   <label for="projectName" class="form-label">Project board name</label>
   <input type="text" class="form-control" id="projectName" placeholder="Project name">
   </div>
   <div class="mb-3">
   <label for="projectDescription" class="form-label">Description (optional)</label>
-  <textarea class="form-control" id="projectDescription" rows="3"></textarea>
+  <textarea class="form-control" id="projDescription" rows="3"></textarea>
   <button type="submit" class="btn btn-primary mb-3">Create project</button>
   </div>
   </form>
   `;
-  renderToDom("#form-container", domString);
+  renderToDom("#forms-container", domString);
 };
 
-const newProject = () => {
-  document.querySelector("form").addEventListener("submit", (e) => {
+const eventListeners = () => {
+  const form = document.getElementById("form-inputs");
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
-    const newProjectObj = {
-      id: projects.length + 1,
-      name: document.querySelector("#formProjectName").value,
-      description: document.querySelector("#projectDescription").value,
+
+    const addProject = {
+      projectName: document.querySelector("#projectName").value,
+      projDescription: document.querySelector("#projDescription").value,
     };
-    projects.push(newProjectObj);
-    projOnDom(projects);
-    formInput.reset();
+    projects.push(addProject);
+    projectsCard(projects);
+    form.reset();
   });
+};
+
+const resetForm = () => {
+  console.log("Reset form");
 };
 
 const startApp = () => {
@@ -151,7 +166,8 @@ const startApp = () => {
   footer();
   projectsCard(projects);
   projectsId(projects);
-  newProject();
-  formInput();
+  formInputs();
+  eventListeners();
+  resetForm();
 };
 startApp();

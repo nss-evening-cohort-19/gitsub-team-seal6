@@ -124,10 +124,26 @@ const repoCards = (array) => {
   renderToDom("#repo-container", domString);
 };
 
+const repoFormInput = () => {
+  let domString = `<form class="mb-3">
+  <label for="projectName" class="form-label">Repository board name</label>
+  <input type="text" class="form-control" id="projectName" placeholder="Project name">
+  </div>
+  <div class="mb-3">
+  <label for="projectDescription" class="form-label">Description (optional)</label>
+  <textarea class="form-control" id="projectDescription" rows="3"></textarea>
+  <button type="submit" class="btn btn-primary mb-3">Create repository</button>
+  </div>
+  </form>
+  `;
+  renderToDom("#form-container", domString);
+};
+
 const startApp = () => {
   profile();
   navbar();
   footer();
+  repoFormInput();
   repoCards(repoData);
 };
 startApp();
