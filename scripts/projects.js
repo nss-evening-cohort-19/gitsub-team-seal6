@@ -34,6 +34,7 @@ const projectsId = () => {
   });
 };
 
+import footer from "./footer.js";
 import navbar from "./navbar.js";
 
 const profile = () => {
@@ -162,6 +163,7 @@ const resetForm = () => {
 const startApp = () => {
   profile();
   navbar();
+  footer();
   projectsCard(projects);
   projectsId(projects);
   formInputs();
