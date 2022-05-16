@@ -125,7 +125,7 @@ const repoCards = (array) => {
 };
 
 const repoFormInput = () => {
-  let domString = `<form class="mb-3">
+  let domString = `<form class="mb-3" id="form-input">
   <label for="repoName" class="form-label">Repository name</label>
   <input type="text" class="form-control" id="repoName" placeholder="Repo name">
   </div>
@@ -142,7 +142,7 @@ const repoFormInput = () => {
 // *** EVENT LISTENERS *** //
 
 const eventListener = () => {
-  const formAdd = document.getElementById("form-container");
+  const formAdd = document.getElementById("form-inputs");
   formAdd.addEventListener("submit", (e) => {
     e.preventDefault();
     const addForm = {
