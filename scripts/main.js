@@ -1,5 +1,6 @@
 import navbar from "./navbar.js";
 import footer from "./footer.js";
+const languages = ["Javascript", "HTML", "CSS"];
 const pinRepos = [
   {
     id: 1,
@@ -9,7 +10,6 @@ const pinRepos = [
     star: 1,
     branches: 8,
   },
-
   {
     id: 2,
     name: "Word-counter",
@@ -59,11 +59,11 @@ const pinRepos = [
     branches: 3,
   },
 ];
-const langColor = () => {
-  const dot = document.querySelector(".color-change");
-  if (pinRepos.type === "Javascript")
-    return (dot.style.backgroundColor = "#0d1117");
-};
+// const langColor = () => {
+//   const dot = document.querySelector(".color-change");
+//   if (pinRepos.type === "Javascript")
+//     return (dot.style.backgroundColor = "#0d1117");
+// };
 //   const color = pinRepos.find(getLanguage);
 //   const dot = document.querySelector(".lang-dot");
 //   function getLanguage(value, index, array) {
@@ -80,7 +80,9 @@ const renderToDom = (divId, textToRender) => {
   const selectedElement = document.querySelector(divId);
   selectedElement.innerHTML = textToRender;
 };
-
+const getRandomNum = (max) => {
+  return Math.floor(Math.random() * max) + 1;
+};
 // DOM Cards
 const profile = () => {
   const domString = `
@@ -187,12 +189,12 @@ const repoCard = () => {
 
 const formInput = () => {
   let domString = `<form class="mb-3">
-  <label for="repoName" class="form-label">Project board name</label>
-  <input type="text" class="form-control" id="repoName" placeholder="Repo name">
+  <label for="name" class="form-label">Project board name</label>
+  <input type="text" class="form-control" id="name" placeholder="Repo name">
   </div>
   <div class="mb-3">
-  <label for="repoDescription" class="form-label">Description (optional)</label>
-  <textarea class="form-control" id="repoDescription" rows="3"></textarea>
+  <label for="description" class="form-label">Description (optional)</label>
+  <textarea class="form-control" id="description" rows="3"></textarea>
   <button type="submit" class="btn btn-primary mb-3">Create repo</button>
   </div>
   </form>
@@ -200,21 +202,23 @@ const formInput = () => {
   renderToDom("#form", domString);
 };
 
-const newRepo = () => {
-  document.querySelector("form").addEventListener("submit", (e) => {
+// Event Listeners
+const eventListeners = () => {
+  const form = document.querySelector("form");
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
     const newRepoObj = {
-      id: pinRepos.length + 1,
-      name: document.querySelector("#repoName").value,
-      description: document.querySelector("#repoDescription").value,
+      name: document.querySelector("#name").value,
+      desciption: document.querySelector("#description").value,
+      type: languages[Math.floor(Math.random() * 3)],
+      star: getRandomNum(10),
+      branches: getRandomNum(12),
     };
-    pinRepos.push(newRepo);
+    pinRepos.push(newRepoObj);
     repoCard(pinRepos);
-    newRepo.reset();
+    form.reset();
   });
 };
-// Event Listeners
-
 // Call the Functions
 const startApp = () => {
   profile();
@@ -222,5 +226,6 @@ const startApp = () => {
   repoCard(pinRepos);
   formInput();
   footer();
+  eventListeners();
 };
 startApp();
