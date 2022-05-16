@@ -126,17 +126,33 @@ const repoCards = (array) => {
 
 const repoFormInput = () => {
   let domString = `<form class="mb-3">
-  <label for="projectName" class="form-label">Repository board name</label>
-  <input type="text" class="form-control" id="projectName" placeholder="Project name">
+  <label for="repotName" class="form-label">Repository board name</label>
+  <input type="text" class="form-control" id="repoName" placeholder="Repo name">
   </div>
   <div class="mb-3">
-  <label for="projectDescription" class="form-label">Description (optional)</label>
-  <textarea class="form-control" id="projectDescription" rows="3"></textarea>
+  <label for="repoDescription" class="form-label">Description (optional)</label>
+  <textarea class="form-control" id="repoDescription" rows="3"></textarea>
   <button type="submit" class="btn btn-primary mb-3">Create repository</button>
   </div>
   </form>
   `;
   renderToDom("#form-container", domString);
+};
+
+// *** EVENT LISTENERS *** //
+
+const eventListener = () => {
+  const formAdd = document.getElementById("form-container");
+  formAdd.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const addForm = {
+      title: document.querySelector("#repoName").value,
+      description: document.querySelector("#repoDescription").value,
+    };
+    repoData.push(addForm);
+    repoCards(array);
+    formInput.reset();
+  });
 };
 
 const startApp = () => {
@@ -145,5 +161,6 @@ const startApp = () => {
   footer();
   repoFormInput();
   repoCards(repoData);
+  eventListener();
 };
 startApp();
