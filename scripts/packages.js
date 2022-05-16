@@ -112,13 +112,13 @@ const packagesCard = (packages) => {
 const formInput = () => {
   let domString = `
   
-  <form>
-  <label for="projectName" class="form-label">Packages name</label>
+  <form id="form-inputs">
+  <label for="packageName" class="form-label">Packages name</label>
   <input type="text" class="form-control" id="packageName" placeholder="Package name">
   </div>
   <div class="mb-3">
-  <label for="projectDescription" id="description" class="form-label">Description (optional)</label>
-  <textarea class="form-control" id="projectDescription" rows="3"></textarea>
+  <label for="packageDescription" id="description" class="form-label">Description (optional)</label>
+  <textarea class="form-control" id="packageDescription" rows="3"></textarea>
   <button type="submit" class="btn btn-primary mb-3">Create package</button>
   </div>
   </form>
@@ -130,26 +130,36 @@ const formInput = () => {
 // Event Listener
 
 const eventListener = () => {
-  const formAdd = document.getElementById("form-container");
+  
+  // const formAdd = document.getElementById("form-container");
+  
+  const formAdd = document.getElementById("form-inputs");
   formAdd.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const addForm = {
-      appName: document.querySelector("#packageName").value,
-      description: document.querySelector("#description").value,
-    };
-    packages.push(addForm);
-    packagesCard(packages);
-    formInput.reset();
-    // const formAdd = document.querySelector("form")
-    // formAdd.addEventListener("submit",(e)=>{
-    //   if (e.target.id.includes('submit')) {
-    //     formInfo.push(...packages.splice(1))
+    e.preventDefault()
+    // const form = document.querySelector("form");
+    // form.addEventListener("click", (e) => {
+    //   e.preventDefault();
+   
+      const addForm = {
+        appName: document.querySelector("#packageName").value,
+        description: document.querySelector("#packageDescription").value,
+      };
+      packages.push(addForm);
+      packagesCard(packages);
+      formAdd.reset();
+      // const formAdd = document.querySelector("form")
+      // formAdd.addEventListener("submit",(e)=>{
+      //   if (e.target.id.includes('submit')) {
+      //     formInfo.push(...packages.splice(1))
 
-    //   }
-    //   packagesCard(packages)
-    //   formAdd.reset();
-  });
+      //   }
+      //   packagesCard(packages)
+      //   formAdd.reset();
+    });
 };
+// const resetForm = () => {
+//   console.log("Reset form");
+// };
 
 const startApp = () => {
   profile();
@@ -158,5 +168,6 @@ const startApp = () => {
   packagesCard(packages);
   formInput();
   eventListener();
+  // resetForm()
 };
 startApp();
