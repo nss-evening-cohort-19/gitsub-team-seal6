@@ -1,7 +1,6 @@
 import footer from "./footer.js";
 import navbar from "./navbar.js";
 
-
 const packages = [
   {
     appName: "Docker",
@@ -30,9 +29,7 @@ const renderToDom = (divId, textToRender) => {
   selectedElement.innerHTML = textToRender;
 };
 
-const formInfo=[]
-
-
+const formInfo = [];
 
 const profile = () => {
   const domString = `
@@ -116,7 +113,7 @@ const packagesCard = (packages) => {
 const formInput = () => {
   let domString = `
   
-  <form>
+  <form id="form-inputs">
   <label for="packageName" class="form-label">Packages name</label>
   <input type="text" class="form-control" id="packageName" placeholder="Package name">
   </div>
@@ -134,29 +131,32 @@ const formInput = () => {
 // Event Listener
 
 const eventListener = () => {
-  const formAdd = document.getElementById("form-container");
+  
+  // const formAdd = document.getElementById("form-container");
+  
+  const formAdd = document.getElementById("form-inputs");
   formAdd.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const form = document.querySelector("form");
-  form.addEventListener("click", (e) => {
-    e.preventDefault();
-    const addForm = {
-      appName: document.querySelector("#packageName").value,
-      description: document.querySelector("#packageDescription").value,
-    };
-    packages.push(addForm);
-    packagesCard(packages);
-    form.reset();
-    // const formAdd = document.querySelector("form")
-    // formAdd.addEventListener("submit",(e)=>{
-    //   if (e.target.id.includes('submit')) {
-    //     formInfo.push(...packages.splice(1))
+    e.preventDefault()
+    // const form = document.querySelector("form");
+    // form.addEventListener("click", (e) => {
+    //   e.preventDefault();
+   
+      const addForm = {
+        appName: document.querySelector("#packageName").value,
+        description: document.querySelector("#packageDescription").value,
+      };
+      packages.push(addForm);
+      packagesCard(packages);
+      formAdd.reset();
+      // const formAdd = document.querySelector("form")
+      // formAdd.addEventListener("submit",(e)=>{
+      //   if (e.target.id.includes('submit')) {
+      //     formInfo.push(...packages.splice(1))
 
-    //   }
-    //   packagesCard(packages)
-    //   formAdd.reset();
-  });
-});
+      //   }
+      //   packagesCard(packages)
+      //   formAdd.reset();
+    });
 };
 // const resetForm = () => {
 //   console.log("Reset form");
