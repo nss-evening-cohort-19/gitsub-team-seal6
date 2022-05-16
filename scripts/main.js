@@ -1,3 +1,5 @@
+import navbar from "./navbar.js";
+import footer from "./footer.js";
 const pinRepos = [
   {
     id: 1,
@@ -80,11 +82,6 @@ const renderToDom = (divId, textToRender) => {
 };
 
 // DOM Cards
-
-import navbar from "./navbar.js";
-
-import footer from "./footer.js";
-
 const profile = () => {
   const domString = `
   <div class="card" style="width: 18rem;">
@@ -216,8 +213,6 @@ const newRepo = () => {
     newRepo.reset();
   });
 };
-//Packages Card
-
 // Event Listeners
 
 // Call the Functions
