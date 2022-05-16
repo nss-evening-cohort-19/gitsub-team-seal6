@@ -1,4 +1,5 @@
 import navbar from "./navbar.js";
+import footer from "./footer.js";
 
 const packages = [
   {
@@ -29,8 +30,7 @@ const renderToDom = (divId, textToRender) => {
 };
 
 const formInfo=[]
-import footer from "./footer.js";
-import navbar from "./navbar.js";
+
 
 const profile = () => {
   const domString = `
