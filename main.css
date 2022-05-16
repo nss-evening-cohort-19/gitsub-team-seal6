@@ -19,11 +19,11 @@ body {
 } */
 /************Profile Card******************/
 .profile-card {
-  background-color:#0d1117;
-  border-color:#30363d;
-  border-radius:0;
-  color:#c9d1d9 ;
-  padding-left: .5rem;
+  background-color: #0d1117;
+  border-color: #30363d;
+  border-radius: 0;
+  color: #c9d1d9;
+  padding-left: 0.5rem;
   display: flex;
   flex-direction: column;
 }
@@ -33,7 +33,7 @@ body {
   text-align: center;
   justify-content: center;
 }
-  .card {
+.card {
   background-color: #0d1117;
   border-color: #30363d;
   border-radius: 0;
@@ -49,33 +49,33 @@ body {
   padding: 5px 16px;
 }
 #navbar {
-height:auto;
-width: fit-content;
+  height: auto;
+  width: fit-content;
 }
 
 .repo-card {
   display: flex;
   flex-direction: column;
-  background-color:#0d1117;
-  border-color:#30363d;
+  background-color: #0d1117;
+  border-color: #30363d;
   border-radius: 6px;
   color: #c9d1d9;
   padding: 16px;
   width: 400px;
-} 
- .repo-details {
+}
+.repo-details {
   display: inline-flex;
   justify-content: space-between;
 }
 .lang-dot {
-    top: 1px;
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    border: 1px solid;
-    border-radius: 50%;
-    background-color: orange;
-} 
+  top: 1px;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid;
+  border-radius: 50%;
+  background-color: orange;
+}
 
 #flex-container {
   display: flex;
@@ -111,22 +111,24 @@ width: fit-content;
   background-color: #0d1117;
   border-color: #30363d;
   padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-right: 16px;
 }
 #packages-container {
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   flex-direction: row;
   width: 80%;
   float: left;
   padding-bottom: 16px;
 }
-#form-inputs{
-display: flex;
+#form-inputs {
+  display: flex;
   flex-direction: column;
   align-content: flex-end;
-  margin:20px;
+  margin: 20px;
 }
-
 
 #forms-container {
   display: flex;
@@ -135,17 +137,17 @@ display: flex;
 }
 #packages-container {
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   flex-direction: row;
   width: 80%;
   float: left;
   padding-bottom: 16px;
 }
-#form-inputs{
-display: flex;
+#form-inputs {
+  display: flex;
   flex-direction: column;
   align-content: flex-end;
-  margin:20px;
+  margin: 20px;
 }
 
 .col {

@@ -40,11 +40,11 @@ import navbar from "./navbar.js";
 const profile = () => {
   const domString = `
   <div class="card" style="width: 18rem;">
-    <img src="../assets/profile-index.jpg" alt="...">
+    <img src="../assets/profile-projects.jpg" alt="...">
     <div>
-      <h5>Jacob Martin</h5>
-      <p>Massacre_Saint</p>
-      <p>Barista by day, programmer by night</p>
+      <h5>Jeremiah King</h5>
+      <p>gitNitroTitan</p>
+      <p>Dev in progress</p>
       <button type="button" class="btn btn-secondary btn-sm">Follow</button>
       <button type="button" class="btn btn-secondary btn-sm">Sponsor</button>
       <button type="button" class="btn btn-secondary btn-sm">...</button>
@@ -68,7 +68,7 @@ const profile = () => {
       </li>
       <li>
         <i class="fa-regular fa-envelope"></i>
-        <a>jbm6b@mtmail.mtsu.edu</a>
+        <a>usaxray25@gmail.com</a>
       </li>
       <li>
         <i class="fa-solid fa-link"></i>
