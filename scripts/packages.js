@@ -1,3 +1,4 @@
+import footer from "./footer.js";
 import navbar from "./navbar.js";
 
 const packages = [
@@ -28,9 +29,7 @@ const renderToDom = (divId, textToRender) => {
   selectedElement.innerHTML = textToRender;
 };
 
-const formInfo=[]
-import footer from "./footer.js";
-import navbar from "./navbar.js";
+const formInfo = [];
 
 const profile = () => {
   const domString = `
@@ -93,8 +92,8 @@ const profile = () => {
     </ul>
   </div>
   `;
-    renderToDom('#profile', domString);
-  }
+  renderToDom("#profile", domString);
+};
 
 const packagesCard = (packages) => {
   let domString = " ";
@@ -110,7 +109,7 @@ const packagesCard = (packages) => {
   renderToDom("#packages-container", domString);
 };
 
-// Form Card 
+// Form Card
 const formInput = () => {
   let domString = `
   
@@ -129,29 +128,29 @@ const formInput = () => {
   renderToDom("#form-container", domString);
 };
 
-// Event Listener 
+// Event Listener
 
 const eventListener = () => {
-  const formAdd = document.getElementById("form-container")
-  formAdd.addEventListener("submit",(e)=>{
-  e.preventDefault();
-const addForm={
-  appName: document.querySelector("#packageName").value,
-  description: document.querySelector("#description").value
-}
-packages.push(addForm);
-packagesCard(packages);
-formInput.reset();
-// const formAdd = document.querySelector("form")
-// formAdd.addEventListener("submit",(e)=>{
-//   if (e.target.id.includes('submit')) {
-//     formInfo.push(...packages.splice(1))
-    
-//   }
-//   packagesCard(packages)
-//   formAdd.reset();
-})
-}
+  const formAdd = document.getElementById("form-container");
+  formAdd.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const addForm = {
+      appName: document.querySelector("#packageName").value,
+      description: document.querySelector("#description").value,
+    };
+    packages.push(addForm);
+    packagesCard(packages);
+    formInput.reset();
+    // const formAdd = document.querySelector("form")
+    // formAdd.addEventListener("submit",(e)=>{
+    //   if (e.target.id.includes('submit')) {
+    //     formInfo.push(...packages.splice(1))
+
+    //   }
+    //   packagesCard(packages)
+    //   formAdd.reset();
+  });
+};
 
 const startApp = () => {
   profile();
