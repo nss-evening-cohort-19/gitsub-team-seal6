@@ -27,6 +27,12 @@ body {
   display: flex;
   flex-direction: column;
 }
+#container {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+  justify-content: center;
+}
   .card {
   background-color: #0d1117;
   border-color: #30363d;
